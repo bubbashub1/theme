@@ -1,1 +1,142 @@
-.bh-eyebrow{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--bh-sage-deep);margin:0 0 .75rem}.bh-content{padding:clamp(2.5rem,6vw,5rem) 0;max-width:900px}.bh-prose>*+*{margin-top:1.25rem}.bh-featured-image{margin:2rem 0;border-radius:var(--bh-radius-lg);overflow:hidden}.bh-featured-image img{display:block;width:100%;height:auto}.bh-results{padding:2rem 0 4rem}.bh-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}.bh-list-card{overflow:hidden}.bh-list-card>img{width:100%;height:190px;object-fit:cover;display:block}.bh-card__body{padding:1.35rem}.bh-card__body h2{font-size:1.55rem;margin:.1rem 0 .65rem}.bh-card__body h2 a{text-decoration:none;color:inherit}.bh-text-link{font-weight:700;text-decoration:none}.bh-empty{padding:2rem}.bh-menu-toggle{display:none;border:1px solid var(--bh-line);background:var(--bh-surface);border-radius:999px;padding:.55rem .85rem;font-weight:600;color:var(--bh-ink)}.bh-pagination{margin-top:2rem}@media(max-width:860px){.bh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.bh-menu-toggle{display:block}.bh-nav{display:none;width:100%}.bh-nav.is-open{display:block}.bh-header__inner{flex-wrap:wrap}.bh-nav ul{display:flex;flex-direction:column;padding:.75rem 0 1rem}.bh-grid{grid-template-columns:1fr}.bh-list-card>img{height:210px}}
+.bh-eyebrow{
+  margin:0 0 .75rem;
+  font-size:.82rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:900;
+  color:var(--bh-teal-dark);
+}
+.bh-content{padding:clamp(2.5rem,6vw,5rem) 0;max-width:900px}
+.bh-prose>*+*{margin-top:1.25rem}
+.bh-featured-image{margin:2rem 0;border-radius:var(--bh-radius-lg);overflow:hidden;box-shadow:var(--bh-shadow)}
+.bh-featured-image img{display:block;width:100%;height:auto}
+.bh-results{padding:1.25rem 0 4rem}
+.bh-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+.bh-list-card{
+  overflow:hidden;
+  background:var(--bh-surface);
+  border:1px solid var(--bh-line);
+  border-radius:22px;
+  box-shadow:var(--bh-shadow-soft);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.bh-list-card:hover{transform:translateY(-2px);box-shadow:var(--bh-shadow)}
+.bh-list-card>img{width:100%;height:190px;object-fit:cover;display:block}
+.bh-card__body{padding:1.25rem 1.35rem 1.4rem}
+.bh-card__body h2{font-size:1.55rem;margin:.1rem 0 .65rem}
+.bh-card__body h2 a{text-decoration:none;color:inherit}
+.bh-card__body p{color:var(--bh-ink-soft)}
+.bh-text-link{font-weight:900;text-decoration:none;color:var(--bh-teal-dark)}
+.bh-empty{padding:2rem;border-radius:20px;background:var(--bh-panel)}
+.bh-pagination{margin-top:2rem}
+.bh-pagination .page-numbers{
+  display:inline-flex;
+  min-width:42px;
+  min-height:42px;
+  align-items:center;
+  justify-content:center;
+  margin:.2rem;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--bh-line);
+  text-decoration:none;
+  font-weight:800;
+}
+.bh-pagination .current{background:var(--bh-teal);color:#fff;border-color:var(--bh-teal)}
+.bh-menu-toggle{display:none}
+
+/* Pastel Bubba Hub interface helpers.
+   These are deliberately broad so plugin screens inherit the visual language
+   without moving application logic into the theme. */
+.bh-main .search-form,
+.bh-main .searchandfilter,
+.bh-main .search-filter-form,
+.bh-main .directorist-search-form,
+.bh-main .bh-search-panel,
+.bh-main .directory-search,
+.bh-main .directory-filters{
+  border-radius:28px;
+  background:linear-gradient(135deg,var(--bh-panel),var(--bh-panel-2));
+  border:1px solid #dcebea;
+  box-shadow:var(--bh-shadow);
+}
+.bh-main .search-form button,
+.bh-main .searchandfilter button,
+.bh-main .search-filter-form button,
+.bh-main .directorist-search-form button,
+.bh-main .bh-search-panel button,
+.bh-main .directory-search button,
+.bh-main .directory-filters button,
+.bh-main button[type="submit"],
+.bh-main input[type="submit"]{
+  min-height:48px;
+  border:0;
+  border-radius:999px;
+  padding:.72rem 1.3rem;
+  background:var(--bh-coral);
+  color:#fff;
+  font-weight:900;
+  box-shadow:var(--bh-shadow-soft);
+}
+.bh-main .search-form button:hover,
+.bh-main .searchandfilter button:hover,
+.bh-main .search-filter-form button:hover,
+.bh-main .directorist-search-form button:hover,
+.bh-main .bh-search-panel button:hover,
+.bh-main .directory-search button:hover,
+.bh-main .directory-filters button:hover,
+.bh-main button[type="submit"]:hover,
+.bh-main input[type="submit"]:hover{filter:brightness(.96);transform:translateY(-1px)}
+
+.bh-main .directorist-card,
+.bh-main .directorist-listing,
+.bh-main .listing-card,
+.bh-main .directory-card,
+.bh-main .bh-directory-card{
+  border:1px solid var(--bh-line);
+  border-radius:22px;
+  background:#fff;
+  box-shadow:var(--bh-shadow-soft);
+  overflow:hidden;
+}
+.bh-main .directorist-card:hover,
+.bh-main .directorist-listing:hover,
+.bh-main .listing-card:hover,
+.bh-main .directory-card:hover,
+.bh-main .bh-directory-card:hover{box-shadow:var(--bh-shadow)}
+
+.bh-main .nav-tabs,
+.bh-main .view-toggle,
+.bh-main .directory-view-toggle,
+.bh-main .bh-view-toggle{
+  display:flex;
+  gap:.35rem;
+  flex-wrap:wrap;
+}
+.bh-main .nav-tabs a,
+.bh-main .view-toggle button,
+.bh-main .directory-view-toggle button,
+.bh-main .bh-view-toggle button{
+  border-radius:999px;
+  font-weight:900;
+}
+.bh-main .active,
+.bh-main .is-active{border-radius:999px}
+
+@media(max-width:860px){
+  .bh-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:700px){
+  .bh-menu-toggle{display:block}
+  .bh-nav{display:none;width:100%}
+  .bh-nav.is-open{display:block}
+  .bh-grid{grid-template-columns:1fr}
+  .bh-list-card>img{height:210px}
+  .bh-main .search-form,
+  .bh-main .searchandfilter,
+  .bh-main .search-filter-form,
+  .bh-main .directorist-search-form,
+  .bh-main .bh-search-panel,
+  .bh-main .directory-search,
+  .bh-main .directory-filters{border-radius:22px}
+}
