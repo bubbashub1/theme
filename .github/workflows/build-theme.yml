@@ -26,11 +26,9 @@ jobs:
           test -f functions.php
           test -f index.php
           grep -q "Theme Name: Bubba Hub" style.css
-          php -l functions.php
-          php -l header.php
-          php -l footer.php
-          php -l index.php
-          php -l 404.php
+          while IFS= read -r -d '' file; do
+            php -l "$file"
+          done < <(find . -type f -name '*.php' -not -path './.git/*' -not -path './package/*' -print0)
           python - <<'PY'
           import json
           with open("theme.json", encoding="utf-8") as f:
