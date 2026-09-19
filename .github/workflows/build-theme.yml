@@ -1,0 +1,59 @@
+name: Build Bubba Hub Theme
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Validate theme
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f style.css
+          test -f theme.json
+          test -f functions.php
+          test -f index.php
+          grep -q "Theme Name: Bubba Hub" style.css
+          php -l functions.php
+          php -l header.php
+          php -l footer.php
+          php -l index.php
+          php -l 404.php
+          python - <<'PY'
+          import json
+          with open("theme.json", encoding="utf-8") as f:
+              json.load(f)
+          print("theme.json valid")
+          PY
+
+      - name: Build WordPress theme ZIP
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf package
+          mkdir -p package/bubba-hub
+          rsync -a --exclude='.git' --exclude='.github' --exclude='package' ./ package/bubba-hub/
+          cd package
+          zip -r ../bubba-hub-theme-wordpress-ready.zip bubba-hub >/dev/null
+          cd ..
+          test -s bubba-hub-theme-wordpress-ready.zip
+          unzip -l bubba-hub-theme-wordpress-ready.zip | grep -q 'bubba-hub/style.css'
+
+      - name: Upload theme artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bubba-hub-theme-wordpress-ready
+          path: bubba-hub-theme-wordpress-ready.zip
+          if-no-files-found: error
