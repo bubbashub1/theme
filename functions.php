@@ -28,3 +28,9 @@ function bubba_hub_body_classes($classes){
  return $classes;
 }
 add_filter('body_class','bubba_hub_body_classes');
+
+function bubba_hub_menu_classes( $classes, $item ) {
+ if ( isset($item->title) && strtolower(trim(wp_strip_all_tags($item->title))) === 'leader portal' ) { $classes[] = 'bh-leader-portal'; }
+ return $classes;
+}
+add_filter('nav_menu_css_class','bubba_hub_menu_classes',10,2);
