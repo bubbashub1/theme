@@ -1,24 +1,49 @@
 {
-  "$schema":"https://schemas.wp.org/wp/6.6/theme.json",
-  "version":3,
-  "settings":{
-    "appearanceTools":true,
-    "layout":{"contentSize":"1180px","wideSize":"1400px"},
-    "color":{"palette":[
-      {"slug":"ink","color":"#3f3b36","name":"Ink"},{"slug":"ink-soft","color":"#625d55","name":"Soft Ink"},
-      {"slug":"paper","color":"#fbf8f2","name":"Paper"},{"slug":"surface","color":"#fffdf9","name":"Surface"},
-      {"slug":"cream","color":"#f4ede1","name":"Cream"},{"slug":"sage","color":"#dfe9df","name":"Sage"},
-      {"slug":"sage-deep","color":"#567064","name":"Deep Sage"},{"slug":"peach","color":"#efc6b5","name":"Peach"},
-      {"slug":"coral","color":"#d98270","name":"Coral"},{"slug":"gold","color":"#d9ad63","name":"Gold"}
-    ]},
-    "typography":{"fontFamilies":[
-      {"fontFamily":""Work Sans", sans-serif","slug":"work-sans","name":"Work Sans"},
-      {"fontFamily":""Playfair Display", Georgia, serif","slug":"playfair","name":"Playfair Display"}
-    ]}
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "1180px",
+      "wideSize": "1400px"
+    },
+    "color": {
+      "palette": [
+        {"slug":"ink","color":"#3f3b36","name":"Ink"},
+        {"slug":"ink-soft","color":"#625d55","name":"Soft Ink"},
+        {"slug":"paper","color":"#fbf8f2","name":"Paper"},
+        {"slug":"surface","color":"#fffdf9","name":"Surface"},
+        {"slug":"cream","color":"#f4ede1","name":"Cream"},
+        {"slug":"sage","color":"#dfe9df","name":"Sage"},
+        {"slug":"sage-deep","color":"#567064","name":"Deep Sage"},
+        {"slug":"peach","color":"#efc6b5","name":"Peach"},
+        {"slug":"coral","color":"#d98270","name":"Coral"},
+        {"slug":"gold","color":"#d9ad63","name":"Gold"}
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {"fontFamily":"Work Sans, sans-serif","slug":"work-sans","name":"Work Sans"},
+        {"fontFamily":"Playfair Display, Georgia, serif","slug":"playfair","name":"Playfair Display"}
+      ]
+    }
   },
-  "styles":{
-    "color":{"background":"var:preset|color|paper","text":"var:preset|color|ink"},
-    "typography":{"fontFamily":"var:preset|font-family|work-sans","lineHeight":"1.6"},
-    "elements":{"heading":{"typography":{"fontFamily":"var:preset|font-family|playfair","lineHeight":"1.15"}}}
+  "styles": {
+    "color": {
+      "background": "var:preset|color|paper",
+      "text": "var:preset|color|ink"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|work-sans",
+      "lineHeight": "1.6"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|playfair",
+          "lineHeight": "1.15"
+        }
+      }
+    }
   }
 }
